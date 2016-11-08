@@ -1,0 +1,7 @@
+{
+	"imposm_config_path": "./config.json",
+	"download_path": "../../Data",
+	"pbf_file": "../../Data/sierra-leone-latest.osm.pbf",
+	"o5m_file": "../../Data/planet-new.o5m",
+	"osmfilter_parameters": "./osmfilter_params"
+}
