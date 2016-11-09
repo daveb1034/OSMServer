@@ -92,3 +92,20 @@ cd ~/src/OSMServer/src/updater
 ```
 The -i switch calls imposm3 to import the data using the default configuration which will store the cache in ~/src/OSMServer/Data and utilise the mapping file in the smae directory as import_pbf.py.
 The -C switch converts the planet-latest.osm.pnf to .o5m for later processing.
+
+A full planet import (~33GB) took approximately 29hours on my hardware (48GB Ram Dual 8Core Intel Xeon Processors and 2 x 20TB RAID)
+
+## Apply diff updates
+
+This process has been adapted from the [differ_cron.py](https://github.com/lyrk/imposm3-differ) script.
+Before setting up the auto update script it is advisable to apply all the previous change files. This can be achieved using the auto update script by specifiying -d and the diff number.
+
+By design Imposm3 tries to guess the last state number but this is based on the minutely replication. In order to change this open the last.state.text file in the imposm3 cache directory and change the number to relevant daily number eg 1517.
+Failure to do this will cause imposm3 to report that each daily diff has already been imported.
+
+```
+cd ~/src/OSMServer/src/updater
+./update.py -d <diffnumber>
+```
+
+At this time only one diff file at a time can be applied using the update script.
