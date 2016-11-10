@@ -99,6 +99,14 @@ If you wish to access the data from ArcGIS a primary key column is required. The
 This will adjusting as required and may take a while to run depending on the number fo features in your tables.
 ArcGIS does not recognise Postgres BIGSERIAL as OBJECTID (returns as double) so you are limited to ~2.1billion records using the SERIAL data type
 
+```
+cd ~/src/OSMServer/src/updater
+sudo -u postgres psql
+\c osm
+\i table_id.sql
+\q
+```
+
 ## Apply diff updates
 
 This process has been adapted from the [differ_cron.py](https://github.com/lyrk/imposm3-differ) script.
