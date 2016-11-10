@@ -60,7 +60,7 @@ Obtain the latest Imposm3 [binary](https://imposm.org/static/rel/).
 ```
 mkdir ~/bin
 ```
-Extract the archive to the `~/bin` and add it to your path.
+Extract the archive to the `~/bin` and add it to your path. To persist this add the following to .bashrc and source it to apply the changes
 ```
 export PATH=$PATH:$HOME/bin
 ```
@@ -95,6 +95,10 @@ The -C switch converts the planet-latest.osm.pnf to .o5m for later processing.
 
 A full planet import (~33GB) took approximately 29hours on my hardware (48GB Ram Dual 8Core Intel Xeon Processors and 2 x 20TB RAID)
 
+If you wish to access the data from ArcGIS a primary key column is required. The table_id.sql file contains the relevant statements to run for this mapping file.
+This will adjusting as required and may take a while to run depending on the number fo features in your tables.
+ArcGIS does not recognise Postgres BIGSERIAL as OBJECTID (returns as double) so you are limited to ~2.1billion records using the SERIAL data type
+
 ## Apply diff updates
 
 This process has been adapted from the [differ_cron.py](https://github.com/lyrk/imposm3-differ) script.
@@ -109,3 +113,27 @@ cd ~/src/OSMServer/src/updater
 ```
 
 At this time only one diff file at a time can be applied using the update script.
+
+## Configure the cron
+
+To ensure the database updates daily use the user crontab to run the task
+
+```
+crontab -e
+```
+
+To ensure that the task runs correctly the PATH= variable will need setting with cron. Add the script with the options specified.
+
+This is not yet working and wll be resolved soon.
+
+The daily update will also update the .o5m planet file and filter all highway related information for use in the ArcGIS OSM Editor tools.
+
+## Additional tasks
+
+To enable access to the database from a remote machine follow the Postgres instructions to expose the database on your network. To apply bounding boxes to 
+highways file on a windows machine setup Samba on the server and share the Data folder. There are lenty of tutorials out there to do this.
+
+## Extract a bounding box of the osm data within ArcGIS
+
+To extract the data, add all the layers from the postgis database. Save the map document and then run Package Map with extent of the map as the AOI. If ths map document is symbolise it can be used to create a map cache as well.
+
