@@ -69,7 +69,7 @@ export PATH=$PATH:$HOME/bin
 ```
 cd ~/src
 git clone https://github.com/daveb1034/OSMServer.git
-cd OSMUtils/src
+cd OSMServer
 ```
 
 ## Download OpenStreetMap data
@@ -86,6 +86,7 @@ wget http://planet.openstreetmap.org/pbf/planet-latest.osm.pbf
 ## Import the data into PostgreSQL
 
 The import process is managed using a number of configuration files and a python script.
+You will need to set the execute flag on the python script to enable it to run.
 ```
 cd ~/src/OSMServer/src/updater
 ./import_pbf.py -i -C
@@ -114,6 +115,8 @@ Before setting up the auto update script it is advisable to apply all the previo
 
 By design Imposm3 tries to guess the last state number but this is based on the minutely replication. In order to change this open the last.state.text file in the imposm3 cache directory and change the number to relevant daily number eg 1517.
 Failure to do this will cause imposm3 to report that each daily diff has already been imported.
+
+You will need to set the execute flag on the python script to enable it to run.
 
 ```
 cd ~/src/OSMServer/src/updater
