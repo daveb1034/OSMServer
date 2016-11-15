@@ -1,21 +1,4 @@
 use_single_id_space: true
-generalized_tables:
-  landuse_polygon_gen0:
-    source: landuse_polygon_gen1
-    sql_filter: area>500000.000000
-    tolerance: 200.0
-  landuse_polygon_gen1:
-    source: landuse_polygon
-    sql_filter: area>50000.000000
-    tolerance: 50.0
-  water_polygon_gen0:
-    source: water_polygon
-    sql_filter: area>40000.000000
-    tolerance: 30.0
-  building_polygon_gen0:
-    source: building_polygon
-    sql_filter: ST_Area(geometry)>1700.000000
-    tolerance: 0.0
 tables:
   admin_linestring:
     fields:
