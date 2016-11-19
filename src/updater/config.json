@@ -1,6 +1,6 @@
 {
 	"cachedir":"../../Data/cache",
 	"connection":"postgis://osm:osm@localhost/osm",
-	"mapping":"./mapping.yml",
+	"mapping":"./mapping_mod.yml",
 	"srid":4326
 }
