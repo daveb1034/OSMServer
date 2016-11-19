@@ -105,9 +105,11 @@ The -C switch converts the planet-latest.osm.pnf to .o5m for later processing.
 
 A full planet import (~33GB) took approximately 29hours on my hardware (48GB Ram Dual 8Core Intel Xeon Processors and 2 x 20TB RAID)
 
-If you wish to access the data from ArcGIS a primary key column is required. The table_id.sql file contains the relevant statements to run for this mapping file.
-This will adjusting as required and may take a while to run depending on the number fo features in your tables.
-ArcGIS does not recognise Postgres BIGSERIAL as OBJECTID (returns as double) so you are limited to ~2.1billion records using the SERIAL data type
+## Optional section
+
+The imposm3 importer looks in the background for an id column. If one is found the importer skips the creation of a SERIAL PRIMARY KEY field. THis will prevnt the data being accessible in ArcGIS.
+
+If you specify the option to use single id space and specify a cloumn named id the following code will sql file will need to be run. 
 
 ```
 cd ~/src/OSMServer/src/updater
