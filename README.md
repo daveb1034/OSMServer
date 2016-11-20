@@ -109,7 +109,7 @@ A full planet import (~33GB) took approximately 29hours on my hardware (48GB Ram
 
 The imposm3 importer looks in the background for an id column. If one is found the importer skips the creation of a SERIAL PRIMARY KEY field. THis will prevnt the data being accessible in ArcGIS.
 
-If you specify the option to use single id space and specify a cloumn named id the following code will sql file will need to be run. 
+If you specify the option to use single id space and specify a cloumn named id the following code sql file will need to be run. 
 
 ```
 cd ~/src/OSMServer/src/updater
@@ -118,6 +118,8 @@ sudo -u postgres psql
 \i table_id.sql
 \q
 ```
+
+To avoid having to run this ensure that your mapping file does not have a column named id specified.
 
 ## Apply diff updates
 
