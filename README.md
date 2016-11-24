@@ -161,3 +161,12 @@ highways file on a windows machine setup Samba on the server and share the Data 
 
 To extract the data, add all the layers from the postgis database. Save the map document and then run Package Map with extent of the map as the AOI. If ths map document is symbolise it can be used to create a map cache as well.
 
+## Future work
+
+* Optimise Postgresql for the large imports.
+* Create more suitable mapping file.
+  * Each table results in a connection to the database when writing due to the underlying operation of imposm3 so max connections needs to reflect this
+* Benchmark on current hardware in diff and normal mode
+* Design optimised hardware config for the process
+  * confirm planet import cache sizes normal and diff
+  * confirm size of resulting database tables
