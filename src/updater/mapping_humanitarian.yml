@@ -5,12 +5,36 @@ tables:
       type: id
     - name: geometry
       type: geometry
-    - key: building
-      name: type
+    - name: type
       type: mapping_value
-    - name: area
-      type: pseudoarea
     mapping:
       building:
       - __any__
+    type: polygon
+  waterway_polygon:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      waterway:
+      - __any__
+      natural:
+      - water
+      - pond
+      - wetland
+      landuse:
+      - wetland
+      - salt_pond
+      leisure:
+      - wetland
     type: polygon
