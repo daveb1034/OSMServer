@@ -38,3 +38,127 @@ tables:
       leisure:
       - wetland
     type: polygon
+  landuse_natural:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      natural:
+      - desert
+      - sand
+      - beach
+      - grass
+      - grassland
+      - park
+      - forest
+      - wood
+      - heath
+      - meadow
+      - scrub
+      boundary:
+      - national_park
+      man_made:
+      - garden
+      landuse:
+      - common
+      - grass
+      - grassland
+      - park
+      - garden
+      - village_green
+      - forest
+      - wood
+      - heath
+      - meadow
+      - scrub
+      - farmland
+      - farm
+      - orchard
+      - allotments
+      - beach
+      leisure:
+      - nature_reserve
+      - common
+      - park
+      - garden
+      - village_green
+      - heath
+      amenity:
+      - garden
+      - allotments
+    type: polygon
+  landuse_manmade:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      highway:
+      - pedestrian
+      - residential
+      landuse:
+      - military
+      - cemetery
+      - graveyard
+      - commercial
+      - hospital
+      - industrial
+      - landfill
+      - quarry
+      - residential
+      - retail
+      - school
+      - education
+      - pitch
+      - recreation_ground
+      - playground
+      leisure:
+      - cemetery
+      - golf_course
+      - landfill
+      - residential
+      - sports_centre
+      - stadium
+      - pitch
+      - recreation_ground
+      - playground
+      amenity:
+      - cemetery
+      - grave_yard
+      - college
+      - golf_course
+      - hospital
+      - residential
+      - school
+      - education
+      - university
+      - pitch
+      tourism:
+      - picnic_site
+      - camp_site
+      aeroway:
+      - apron
+      - runway
+      - taxiway
+      - aerodrome
+      - terminal
+    type: polygon
