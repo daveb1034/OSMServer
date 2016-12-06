@@ -5,8 +5,6 @@ tables:
       type: id
     - name: geometry
       type: geometry
-    - name: type
-      type: mapping_value
     mapping:
       building:
       - __any__
