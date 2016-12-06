@@ -32,6 +32,7 @@ tables:
       - water
       - pond
       - wetland
+      - bay
       landuse:
       - wetland
       - salt_pond
