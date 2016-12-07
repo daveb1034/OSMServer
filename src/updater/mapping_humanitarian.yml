@@ -161,6 +161,19 @@ tables:
       - aerodrome
       - terminal
     type: polygon
+  barrier_polygon:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      barrier:
+      - wall
+      - fence
+    type: polygon
   waterway_line:
     fields:
     - name: osm_id
@@ -189,4 +202,19 @@ tables:
       - river
       - stream
       - weir
+    type: linestring
+  barrier_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      barrier:
+      - hedge
+      - wall
+      - fence
+      - gate
     type: linestring
