@@ -292,3 +292,40 @@ tables:
       - pedestrian
       - steps
     type: linestring
+  railway_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: bridge
+      key: bridge
+      type: bool
+    - name: tunnel
+      key: tunnel
+      type: bool
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      railway:
+      - rail
+      - yard
+      - abandoned
+      - construction
+      - disused
+      - funicular
+      - light_rail
+      - monorail
+      - platform
+      - preserved
+      - subway
+      - tram
+      - narrow_gauge
+      - miniature
+    type: linestring
