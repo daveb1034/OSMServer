@@ -174,7 +174,7 @@ tables:
       - wall
       - fence
     type: polygon
-  waterway_line:
+  hydro_line:
     fields:
     - name: osm_id
       type: id
@@ -202,6 +202,8 @@ tables:
       - river
       - stream
       - weir
+      route:
+      - ferry
     type: linestring
   barrier_line:
     fields:
