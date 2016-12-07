@@ -259,3 +259,36 @@ tables:
       - living_street
       - service
     type: linestring
+  track_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: ford
+      key: ford
+      type: bool
+    - name: bridge
+      key: bridge
+      type: bool
+    - name: tunnel
+      key: tunnel
+      type: bool
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      highway:
+      - track
+      - bridleway
+      - cycleway
+      - footway
+      - path
+      - pedestrian
+      - steps
+    type: linestring
