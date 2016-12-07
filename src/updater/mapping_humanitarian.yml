@@ -235,6 +235,12 @@ tables:
     - name: tunnel
       key: tunnel
       type: bool
+    - name: construction
+      key: construction
+      type: bool
+    - name: oneway
+      key: oneway
+      type: bool
     - name: name
       key: name
       type: string
