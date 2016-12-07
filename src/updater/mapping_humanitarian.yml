@@ -337,3 +337,16 @@ tables:
       - narrow_gauge
       - miniature
     type: linestring
+  aeroway_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      aeroway:
+      - runway
+      - taxiway
+    type: linestring
