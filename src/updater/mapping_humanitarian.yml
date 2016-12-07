@@ -169,6 +169,12 @@ tables:
       type: geometry
     - name: type
       type: mapping_value
+    - name: seasonal
+      key: seasonal
+      type: bool
+    - name: intermittent
+      key: intermittent
+      type: bool
     - name: name
       key: name
       type: string
@@ -177,5 +183,10 @@ tables:
       type: string
     mapping:
       waterway:
-      - __any__
+      - canal
+      - ditch
+      - drain
+      - river
+      - stream
+      - weir
     type: linestring
