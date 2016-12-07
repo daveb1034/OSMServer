@@ -218,3 +218,44 @@ tables:
       - fence
       - gate
     type: linestring
+  highway_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: ford
+      key: ford
+      type: bool
+    - name: bridge
+      key: bridge
+      type: bool
+    - name: tunnel
+      key: tunnel
+      type: bool
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      highway:
+      - motorway
+      - motorway_link
+      - trunk
+      - trunk_link
+      - primary
+      - primary_link
+      - secondary
+      - secondary_link
+      - tertiary
+      - tertiary_link
+      - road
+      - unclassified
+      - residential
+      - living_street
+      - service
+    type: linestring
