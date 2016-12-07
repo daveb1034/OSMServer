@@ -161,3 +161,21 @@ tables:
       - aerodrome
       - terminal
     type: polygon
+  waterway_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      waterway:
+      - __any__
+    type: linestring
