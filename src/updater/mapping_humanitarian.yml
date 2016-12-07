@@ -350,3 +350,16 @@ tables:
       - runway
       - taxiway
     type: linestring
+  power_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      power:
+      - line
+      - cable
+    type: linestring
