@@ -448,6 +448,7 @@ tables:
       type: string
     - key: ref
       name: ref
+      type: string
     mapping:
       amenity:
       - arts_centre
