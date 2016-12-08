@@ -428,43 +428,18 @@ tables:
       - peak
       - volcano
     type: point
-  infrastructure_point:
-    fields:
-    - name: osm_id
-      type: id
-    - name: geometry
-      type: geometry
-    - name: power
-      key: power
-      type: string
-    - name: tower_type
-      key: tower:type
-      type: string
-    - name: pump
-      key: pump
-      type: string
-    - name: man_made
-      key: man_made
-      type: string
-    - name: tower
-      key: tower
-      type: string
-    - name: emergency
-      key: emergency
-      type: string
-    - name: name
-      key: name
-      type: string
-    - name: name_en
-      key: name:en
-      type: string
-    type: point
   poi_point:
     fields:
     - name: osm_id
       type: id
     - name: geometry
       type: geometry
+      type: string
+    - name: type
+      type: mapping_value
+    - name: religion
+      key: religion
+      type: string
     - name: name
       key: name
       type: string
@@ -473,9 +448,6 @@ tables:
       type: string
     - key: ref
       name: ref
-      type: string
-    - name: type
-      type: mapping_value
     mapping:
       amenity:
       - arts_centre
@@ -546,8 +518,6 @@ tables:
       - basin
       - reservoir
       - brownfield
-      religion:
-      - __any__
       sport:
       - swimming
       - tennis
