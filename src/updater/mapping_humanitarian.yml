@@ -738,6 +738,9 @@ tables:
     - name: pump_type
       key: pump
       type: string
+    - name: generator_type
+      key: generator:type
+      type: string
     mapping:
       power:
       - pole
