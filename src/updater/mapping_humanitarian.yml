@@ -372,21 +372,37 @@ tables:
     - key: admin_level
       name: admin_level
       type: integer
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
     - name: type
       type: mapping_value
-    filters:
-      exclude_tags:
-      - [ "admin_level", "1"]
-      - [ "admin_level", "__nil__" ]
-      - [ "admin_level", "3" ]
-      - [ "admin_level", "5" ]
-      - [ "admin_level", "6" ]
-      - [ "admin_level", "7" ]
-      - [ "admin_level", "8" ]
-      - [ "admin_level", "9" ]
-      - [ "admin_level", "10" ]
     mapping:
       place:
       - city
       - town
+    type: point
+  aeroway_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      aeroway:
+      - airport
+      - aerodrome
+      - helipad
+      - heliport
     type: point
