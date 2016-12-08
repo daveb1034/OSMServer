@@ -434,7 +434,6 @@ tables:
       type: id
     - name: geometry
       type: geometry
-      type: string
     - name: type
       type: mapping_value
     - name: religion
