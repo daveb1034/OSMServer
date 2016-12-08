@@ -406,3 +406,22 @@ tables:
       - helipad
       - heliport
     type: point
+  natural_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      natural:
+      - peak
+      - volcano
+    type: point
