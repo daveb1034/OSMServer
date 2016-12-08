@@ -36,6 +36,8 @@ tables:
       landuse:
       - wetland
       - salt_pond
+      - reservoir
+      - basin
       leisure:
       - wetland
     type: polygon
