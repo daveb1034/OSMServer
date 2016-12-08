@@ -365,7 +365,7 @@ tables:
     type: linestring
   place_point:
     fields:
-    - name: id
+    - name: osm_id
       type: id
     - name: geometry
       type: geometry
