@@ -747,4 +747,7 @@ tables:
       - dock
       aerialway:
       - station
+      office:
+      - government
+      - ngo
     type: point
