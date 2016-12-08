@@ -743,11 +743,12 @@ tables:
       - pole
       - tower
       - generator
-      tower:
-      - __any__
       man_made:
       - storage_tank
       - water_well
+      - tower
+      - communications_tower
+      - mast
       emergency:
       - fire_hydrant
     type: point
