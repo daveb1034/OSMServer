@@ -107,6 +107,8 @@ A full planet import (~33GB) took approximately 29hours on my hardware (48GB Ram
 
 ## Optional section
 
+**This section is not needed if using the mapping.yml file provided with the project**
+
 The imposm3 importer looks in the background for an id column. If one is found the importer skips the creation of a SERIAL PRIMARY KEY field. THis will prevnt the data being accessible in ArcGIS.
 
 If you specify the option to use single id space and specify a cloumn named id the following code sql file will need to be run. 
