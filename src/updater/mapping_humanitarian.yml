@@ -721,3 +721,33 @@ tables:
       - government
       - ngo
     type: point
+  infra_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: tower_type
+      key: tower:type
+      type: string
+    - name: content
+      key: content
+      type: string
+    - name: pump_type
+      key: pump
+      type: string
+    mapping:
+      power:
+      - pole
+      - tower
+      - generator
+      tower:
+      - __any__
+      man_made:
+      - storage_tank
+      - water_well
+      emergency:
+      - fire_hydrant
+    type: point
