@@ -425,3 +425,27 @@ tables:
       - peak
       - volcano
     type: point
+  infrastructure_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: power
+      key: power
+      type: mapping_value
+    - name: tower_type
+      key: tower:type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      power:
+      - __any__
+      tower:type:
+      - __any__
+    type: point
