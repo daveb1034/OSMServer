@@ -1,0 +1,830 @@
+tables:
+  building_polygon:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      building:
+      - yes
+      - apartments
+      - farm
+      - hotel
+      - house
+      - detatched
+      - residential
+      - dormitory
+      - terrace
+      - houseboat
+      - bungalow
+      - static_caravan
+      - cabin
+      - commercial
+      - office
+      - industrial
+      - retail
+      - supermarket
+      - warehouse
+      - kiosk
+      - religious
+      - cathedral
+      - chapel
+      - church
+      - mosque
+      - temple
+      - synagogue
+      - shrine
+      - bakehouse
+      - kindergarten
+      - civic
+      - government
+      - hospital
+      - school
+      - stadium
+      - train_station
+      - transportation
+      - university
+      - grandstand
+      - public
+      - toilet
+      - barn
+      - bridge
+      - bunker
+      - carport
+      - conservatory
+      - cowshed
+      - digester
+      - farm_auxiliary
+      - garage
+      - garages
+      - garbage_shed
+      - greenhouse
+      - hangar
+      - hut
+      - pavilion
+      - parking
+      - riding_hall
+      - roof
+      - shed
+      - sports_hall
+      - stable
+      - sty
+      - transformer_tower
+      - service
+      - ruins
+      - water_tower
+    type: polygon
+  waterway_polygon:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      waterway:
+      - __any__
+      natural:
+      - water
+      - pond
+      - wetland
+      - bay
+      landuse:
+      - wetland
+      - salt_pond
+      - reservoir
+      - basin
+      leisure:
+      - wetland
+    type: polygon
+  landuse_natural:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      natural:
+      - desert
+      - sand
+      - beach
+      - grass
+      - grassland
+      - park
+      - forest
+      - wood
+      - heath
+      - meadow
+      - scrub
+      boundary:
+      - national_park
+      man_made:
+      - garden
+      landuse:
+      - common
+      - grass
+      - grassland
+      - park
+      - garden
+      - village_green
+      - forest
+      - wood
+      - heath
+      - meadow
+      - scrub
+      - farmland
+      - farm
+      - orchard
+      - allotments
+      - beach
+      leisure:
+      - nature_reserve
+      - common
+      - park
+      - garden
+      - village_green
+      - heath
+      amenity:
+      - garden
+      - allotments
+    type: polygon
+  landuse_manmade:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      highway:
+      - pedestrian
+      - residential
+      landuse:
+      - military
+      - cemetery
+      - graveyard
+      - commercial
+      - hospital
+      - industrial
+      - landfill
+      - quarry
+      - residential
+      - retail
+      - school
+      - education
+      - pitch
+      - recreation_ground
+      - playground
+      leisure:
+      - cemetery
+      - golf_course
+      - landfill
+      - residential
+      - sports_centre
+      - stadium
+      - pitch
+      - recreation_ground
+      - playground
+      amenity:
+      - cemetery
+      - grave_yard
+      - college
+      - golf_course
+      - hospital
+      - residential
+      - school
+      - education
+      - university
+      - pitch
+      tourism:
+      - picnic_site
+      - camp_site
+      aeroway:
+      - apron
+      - runway
+      - taxiway
+      - aerodrome
+      - terminal
+    type: polygon
+  barrier_polygon:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      barrier:
+      - wall
+      - fence
+    type: polygon
+  hydro_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: seasonal
+      key: seasonal
+      type: bool
+    - name: intermittent
+      key: intermittent
+      type: bool
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      waterway:
+      - canal
+      - ditch
+      - drain
+      - river
+      - stream
+      - weir
+      route:
+      - ferry
+    type: linestring
+  barrier_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      barrier:
+      - hedge
+      - wall
+      - fence
+      - gate
+    type: linestring
+  highway_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: ford
+      key: ford
+      type: bool
+    - name: bridge
+      key: bridge
+      type: bool
+    - name: tunnel
+      key: tunnel
+      type: bool
+    - name: construction
+      key: construction
+      type: bool
+    - name: oneway
+      key: oneway
+      type: bool
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    - name: ref
+      key: ref
+      type: string
+    mapping:
+      highway:
+      - motorway
+      - motorway_link
+      - trunk
+      - trunk_link
+      - primary
+      - primary_link
+      - secondary
+      - secondary_link
+      - tertiary
+      - tertiary_link
+      - road
+      - unclassified
+      - residential
+      - living_street
+      - service
+    type: linestring
+  track_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: ford
+      key: ford
+      type: bool
+    - name: bridge
+      key: bridge
+      type: bool
+    - name: tunnel
+      key: tunnel
+      type: bool
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      highway:
+      - track
+      - bridleway
+      - cycleway
+      - footway
+      - path
+      - pedestrian
+      - steps
+    type: linestring
+  railway_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: bridge
+      key: bridge
+      type: bool
+    - name: tunnel
+      key: tunnel
+      type: bool
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      railway:
+      - rail
+      - yard
+      - abandoned
+      - construction
+      - disused
+      - funicular
+      - light_rail
+      - monorail
+      - platform
+      - preserved
+      - subway
+      - tram
+      - narrow_gauge
+      - miniature
+    type: linestring
+  aeroway_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      aeroway:
+      - runway
+      - taxiway
+    type: linestring
+  power_line:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    mapping:
+      power:
+      - line
+      - cable
+    type: linestring
+  place_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - key: admin_level
+      name: admin_level
+      type: integer
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    - name: type
+      type: mapping_value
+    mapping:
+      place:
+      - city
+      - town
+    type: point
+  aeroway_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    mapping:
+      aeroway:
+      - airport
+      - aerodrome
+      - helipad
+      - heliport
+    type: point
+  natural_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    - key: ele
+      name: elevation_m
+      type: integer
+    mapping:
+      natural:
+      - peak
+      - volcano
+    type: point
+  poi_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: religion
+      key: religion
+      type: string
+    - name: name
+      key: name
+      type: string
+    - name: name_en
+      key: name:en
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    mapping:
+      amenity:
+      - arts_centre
+      - police
+      - fire_station
+      - post_box
+      - post_office
+      - telephone
+      - library
+      - townhall
+      - courthouse
+      - prison
+      - place_of_worship
+      - embassy
+      - community_centre
+      - nursing_home
+      - university
+      - school
+      - kindergarten
+      - college
+      - public_building
+      - pharmacy
+      - hospital
+      - doctors
+      - dentist
+      - veterinary
+      - theatre
+      - nightclub
+      - cinema
+      - restaurant
+      - recycling
+      - fast_food
+      - cafe
+      - pub
+      - bar
+      - food_court
+      - biergarten
+      - swimming_pool
+      - shelter
+      - grave_yard
+      - bank
+      - ferry_terminal
+      - fuel
+      - waste_basket
+      - bicycle_rental
+      - bbq
+      - taxi
+      - bus_station
+      - marketplace
+      - toilets
+      leisure:
+      - park
+      - playground
+      - dog_park
+      - sports_centre
+      - pitch
+      - swimming_pool
+      - swimming_area
+      - water_park
+      - golf_course
+      - miniature_golf
+      - marina
+      - stadium
+      - ice_rink
+      - garden
+      landuse:
+      - cemetery
+      - basin
+      - reservoir
+      - brownfield
+      sport:
+      - swimming
+      - tennis
+      - soccer
+      - baseball
+      - basketball
+      - multi
+      - golf
+      - equestrian
+      - athletics
+      - volleyball
+      - climbing
+      - bowls
+      - american_football
+      - skateboard
+      - shooting
+      - skiing
+      - boules
+      - beachvolleyball
+      - cricket
+      - table_tennis
+      - hockey
+      - gymnastics
+      - running
+      - canoe
+      - rugby_union
+      - skating
+      - scuba_diving
+      - motor
+      - horse_racing
+      - handball
+      - team_handball
+      - karting
+      - cycling
+      - archery
+      - motocross
+      - pelota
+      - rugby
+      - gaelic_games
+      - model_aerodrome
+      - netball
+      - rugby_league
+      - free_flying
+      - rowing
+      - chess
+      - australian_football
+      - cricket_nets
+      - racquet
+      - bmx
+      - sailing
+      - ice_stock
+      - badminton
+      - paddle_tennis
+      - dog_racing
+      - fatsal
+      - billiards
+      - ice_hockey
+      - yoga
+      - disc_golf
+      - orienteering
+      - toboggan
+      - horseshoes
+      - paragliding
+      - korfball
+      - diving
+      - rc_car
+      - canadian_football
+      - field_hockey
+      - shooting_range
+      - boxing
+      - curling
+      - surfing
+      - water_ski
+      - judo
+      - croquet
+      - paintball
+      - climbing_adventure
+      - long_jump
+      - table_soccer
+      tourism:
+      - attraction
+      - artwork
+      - gallery
+      - hotel
+      - motel
+      - bed_and_breakfast
+      - guest_house
+      - hostel
+      - chalet
+      - camp_site
+      - alpine_hut
+      - caravan_site
+      - museum
+      - viewpoint
+      - zoo
+      - theme_park
+      - information
+      - picnic_site
+      shop:
+      - accessories
+      - alcohol
+      - antiques
+      - art
+      - bag
+      - bakery
+      - beauty
+      - bed
+      - beverages
+      - bicycle
+      - books
+      - boutique
+      - butcher
+      - camera
+      - car
+      - car_repair
+      - carpet
+      - charity
+      - chemist
+      - chocolate
+      - clothes
+      - coffee
+      - computer
+      - confectionery
+      - convenience
+      - copyshop
+      - cosmetics
+      - garden_centre
+      - deli
+      - delicatessen
+      - department_store
+      - doityourself
+      - dry_cleaning
+      - video
+      - electronics
+      - erotic
+      - fabric
+      - florist
+      - furniture
+      - video_games
+      - general
+      - gift
+      - greengrocer
+      - hairdresser
+      - hardware
+      - hearing_aids
+      - hifi
+      - ice_cream
+      - interior_decoration
+      - jewelry
+      - kiosk
+      - lamps
+      - laundry
+      - mall
+      - massage
+      - mobile_phone
+      - motorcycle
+      - music
+      - musical_instrument
+      - newsagent
+      - optician
+      - outdoor
+      - perfumery
+      - perfume
+      - pet
+      - photo
+      - second_hand
+      - shoes
+      - sports
+      - stationery
+      - supermarket
+      - tailor
+      - tattoo
+      - ticket
+      - tobacco
+      - toys
+      - travel_agency
+      - watches
+      - weapons
+      - wholesale
+      - wine
+      highway:
+      - motorway_junction
+      - turning_circle
+      - bus_stop
+      barrier:
+      - sally_port
+      - lift_gate
+      - gate
+      - bollard
+      - stile
+      - cycle_barrier
+      - toll_booth
+      - border_control
+      historic:
+      - monument
+      waterway:
+      - dock
+      aerialway:
+      - station
+      office:
+      - government
+      - ngo
+    type: point
+  infra_point:
+    fields:
+    - name: osm_id
+      type: id
+    - name: geometry
+      type: geometry
+    - name: type
+      type: mapping_value
+    - name: tower_type
+      key: tower:type
+      type: string
+    - name: content
+      key: content
+      type: string
+    - name: pump_type
+      key: pump
+      type: string
+    - name: generator_type
+      key: generator:type
+      type: string
+    mapping:
+      power:
+      - pole
+      - tower
+      - generator
+      man_made:
+      - storage_tank
+      - water_well
+      - tower
+      - communications_tower
+      - mast
+      emergency:
+      - fire_hydrant
+    type: point
